@@ -10,7 +10,7 @@ dependencies = [
     "dagster==1.7.12",
     "dbt-core",
     "dbt-duckdb",
-    "duckdb==1.0.0",
+    "duckdb==1.1.0",
     "fsspec",
     "ipykernel",
     "ipywidgets",
