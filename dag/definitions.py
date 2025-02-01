@@ -19,7 +19,9 @@ def world(
     with bigquery.get_client() as bq_client, duckdb.get_connection() as get_client:
         query = "SELECT * from `opensource-observer.oso.stg_passport__scores`"
         job = bq_client.query(query)
-        result: pa.Table = job.to_arrow(create_bqstorage_client=True)  # noqa: F841
+        result: pa.Table = job.to_arrow(create_bqstorage_client=True)
+
+        context.log.info(result.column_names)
 
         get_client.execute(
             """
@@ -28,6 +30,8 @@ def world(
             )
             """
         )
+
+        context.log.info("World!")
 
 
 defs = dg.Definitions(assets=[hello, world])
@@ -38,6 +42,7 @@ defs = Definitions(
     resources={
         "bigquery": BigQueryResource(
             project=dg.EnvVar("BIGQUERY_PROJECT"),
+            gcp_credentials=dg.EnvVar("ENCODED_GOOGLE_APPLICATION_CREDENTIALS"),
         ),
         "duckdb": DuckDBResource(database="data/database.duckdb"),
     },

@@ -8,7 +8,7 @@
   <img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/davidgasquez/grants-data-portal/tables.yml?style=flat-square">
   <img alt="GitHub" src="https://img.shields.io/github/license/davidgasquez/grants-data-portal?style=flat-square">
   <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/davidgasquez/grants-data-portal?style=flat-square">
-  <a href="https://drips.network/app/projects/github/davidgasquez/grants-data-portal" target="_blank"><img src="https://grants.drips.network/api/embed/project/https%3A%2F%2Fgithub.com%2Fdavidgasquez%2Fgrants-data-portal/support.png?background=light&style=drips&text=project&stat=none" alt="Support grants-data-portal on drips.network" height="21"></a>
+  <!-- <a href="https://drips.network/app/projects/github/davidgasquez/grants-data-portal" target="_blank"><img src="https://grants.drips.network/api/embed/project/https%3A%2F%2Fgithub.com%2Fdavidgasquez%2Fgrants-data-portal/support.png?background=light&style=drips&text=project&stat=none" alt="Support grants-data-portal on drips.network" height="21"></a> -->
 </div>
 
 
@@ -30,6 +30,9 @@ This repository contains all the code and related artifacts to process funding d
 
 ![DAG](https://github.com/davidgasquez/gitcoin-grants-data-portal/assets/1682202/2095974c-f8c4-430b-9c93-dd2a0598127e)
 
+## 📖 Overview
+
+The repository contains code and artifacts to help process grants around the Public Goods Ecosystem. The portal is based on the principles of [Datadex](https://github.com/davidgasquez/datadex).
 
 ### 📦 Key Features
 
@@ -40,35 +43,6 @@ This repository contains all the code and related artifacts to process funding d
 - **Modular Flexibility**: Replace, extend, or remove individual components. Compatible with tons of tools. At the end of the day, tables are Parquet files.
 - **Low Friction Data Usage**: Raw and processed data is available to anyone openly. Use whatever tool you want!
 - **Modern Data Engineering**: Supports data engineering essentials such as typing, testing, materialized views, and development branches. Utilizes best practices, including declarative transformations, and utilizes state-of-the-art tools like DuckDB.
-
-## 📂 Gitcoin Grants Data
-
-Datasets are living as Parquet files on IPFS! You can get them all at the [IPFS CID](https://raw.githubusercontent.com/davidgasquez/gitcoin-grants-data-portal/main/data/IPFS_CID) pointer available in this repository, surfaced also in the [Data Portal Data section](https://grantsdataportal.xyz/data/).
-
-The following command will give you a working URL to explore the available tables.
-
-```bash
-# Get the latest IPFS CID
-LATEST_IPFS_CID=$(curl https://raw.githubusercontent.com/davidgasquez/gitcoin-grants-data-portal/main/data/IPFS_CID)
-
-# Print the Gateway URL with all the tables
-echo https://ipfs.filebase.io/ipfs/$LATEST_IPFS_CID/data/
-```
-
-### 📌 IPNS
-
-You can also go to [`ipns://k51qzi5uqu5dhn3p5xdkp8n6azd4l1mma5zujinkeewhvuh5oq4qvt7etk9tvc`](https://k51qzi5uqu5dhn3p5xdkp8n6azd4l1mma5zujinkeewhvuh5oq4qvt7etk9tvc.ipns.cf-ipfs.com/data/), which points to the latest available data via IPNS.
-
-You can now read the files from your favorite tools. E.g: `pd.read_parquet('https://grantsdataportal.xyz/data/allo_rounds.parquet')`
-
-## 📖 Overview
-
-The repository contains code and artifacts to help process Gitcoin Grants data from the [Grants Stack Indexer API](https://github.com/gitcoinco/grants-stack-indexer). It is an instance of [Datadex](https://github.com/davidgasquez/datadex) allowing you and everyone else to:
-
-- Add new data sources to the portal, collaborate on better models (ala Dune) or submit an interesting analysis.
-- All in a permissionless way. Don't ask, fork it and improve the models, add a new source or update any script.
-- Declarative stateless transformations tracked in git, executed in GitHub Actions and published to IPFS. Data, artifacts (like the entire DuckDB database), and models all version controlled.
-- Share and explore dashboards and report with the world!
 
 ## ⚙️ Quick Start
 
