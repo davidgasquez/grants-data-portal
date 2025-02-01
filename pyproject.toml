@@ -1,64 +1,26 @@
 [project]
-name = "ggdp"
-version = "1.0.0"
-authors = [{ name = "David Gasquez" }]
+name = "grants-data-portal"
+version = "0.0.0"
+description = "Open source, serverless, and local-first Data Platform for Gitcoin Grants Data."
+readme = "README.md"
+authors = [{ name = "David Gasquez", email = "davidgasquez@gmail.com" }]
+requires-python = ">=3.13.1"
 dependencies = [
-    "aiohttp",
-    "dagster-dbt",
-    "dagster-duckdb-pandas",
-    "dagster-duckdb",
-    "dagster==1.7.12",
-    "dbt-core",
-    "dbt-duckdb",
-    "duckdb==1.0.0",
-    "fsspec",
-    "ipykernel",
-    "ipywidgets",
-    "itables",
-    "matplotlib",
-    "nbclient",
-    "nbformat",
-    "numpy",
-    "pandas",
-    "pyarrow",
-    "regex",
-    "tenacity",
-    "tqdm",
+    "dagster>=1.9.11",
+    "dagster-duckdb>=0.25.11",
+    "dagster-gcp>=0.25.11",
+    "google-cloud-bigquery-storage>=2.27.0",
 ]
 
-requires-python = ">=3.10, <3.12"
-readme = "README.md"
-license = { text = "MIT" }
-
-[project.urls]
-Homepage = "https://davidgasquez.github.io/gitcoin-grants-data-portal/"
-Changelog = "https://github.com/davidgasquez/gitcoin-grants-data-portal/commits/main/"
-Issues = "https://github.com/davidgasquez/gitcoin-grants-data-portal/issues"
-CI = "https://github.com/davidgasquez/gitcoin-grants-data-portal/actions"
-
-[project.optional-dependencies]
-dev = ["dagster-webserver", "harlequin", "ruff"]
-
 [build-system]
-requires = ["setuptools"]
-build-backend = "setuptools.build_meta"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
-[tool.setuptools]
-packages = ["ggdp"]
+[tool.hatch.build.targets.wheel]
+packages = ["dag"]
 
-[tool.setuptools.package-data]
-"ggdp" = ["../dbt/**"]
+[dependency-groups]
+dev = ["dagster-webserver>=1.9.11"]
 
 [tool.dagster]
-module_name = "ggdp"
-
-[tool.sqlfmt]
-line_length = 120
-check = true
-fast = false
-dialect = "duckdb"
-
-[tool.ruff.lint.isort]
-case-sensitive = true
-combine-as-imports = true
-length-sort = true
+module_name = "dag.definitions"

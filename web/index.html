@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A minimal portal to explore grants data and key ideas.">
+    <title>Grants Data Portal</title>
+    <style>
+        body {
+            font-family: monospace;
+            background-color: #fff;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        header,
+        main,
+        footer {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1,
+        h2 {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        a {
+            color: #555;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .dataset {
+            margin-bottom: 20px;
+        }
+
+        /* Added dark-mode styles */
+        body.dark-mode {
+            background-color: #222;
+            color: #eee;
+        }
+
+        /* Theme toggle button styled to fit within the header */
+        #theme-toggle {
+            background: none;
+            border: none;
+            font-size: 1.2em;
+            cursor: pointer;
+            margin-left: auto;
+        }
+
+        /* Add flex layout to header for proper alignment */
+        header {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        /* Ensure the header h1 occupies available space */
+        header h1 {
+            flex-grow: 1;
+        }
+
+        /* Add CSS to force header p onto a new line */
+        header p {
+            flex-basis: 100%;
+            margin-top: 0.5em;
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Grants Data Portal</h1>
+        <button id="theme-toggle">🌗</button>
+        <p>Open source, serverless, and local-first Data Platform for Grants Data. Access the data you need to conduct
+            research and drive the community forward!</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Main Ideas</h2>
+            <p>This portal gathers and processes grant data to offer key insights and enable data-driven decision
+                making.</p>
+            <p>It harnesses modern data pipelines and storage techniques to ensure transparent and reproducible results.
+            </p>
+        </section>
+
+        <section>
+            <h2>Datasets</h2>
+            <article class="dataset">
+                <h3>Dataset 1</h3>
+                <p>Description of the first dataset.</p>
+            </article>
+            <article class="dataset">
+                <h3>Dataset 2</h3>
+                <p>Description of the second dataset.</p>
+            </article>
+            <article class="dataset">
+                <h3>Dataset 3</h3>
+                <p>Description of the third dataset.</p>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>Follow on <a href="https://github.com/davidgasquez/grants-data-portal" target="_blank">GitHub</a> and <a
+                href="https://twitter.com/davidgasquez" target="_blank">Twitter</a>.</p>
+    </footer>
+    <script>
+        document.getElementById('theme-toggle').addEventListener('click', function () {
+            document.body.classList.toggle('dark-mode');
+        });
+    </script>
+</body>
+
+</html>
