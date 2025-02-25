@@ -4,15 +4,13 @@
 <h1 align="center">Grants Data Portal</h1>
 
 <div align="center">
-  <img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/davidgasquez/grants-data-portal/pipeline.yml?style=flat-square">
-  <img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/davidgasquez/grants-data-portal/tables.yml?style=flat-square">
-  <img alt="GitHub" src="https://img.shields.io/github/license/davidgasquez/grants-data-portal?style=flat-square">
   <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/davidgasquez/grants-data-portal?style=flat-square">
-  <!-- <a href="https://drips.network/app/projects/github/davidgasquez/grants-data-portal" target="_blank"><img src="https://grants.drips.network/api/embed/project/https%3A%2F%2Fgithub.com%2Fdavidgasquez%2Fgrants-data-portal/support.png?background=light&style=drips&text=project&stat=none" alt="Support grants-data-portal on drips.network" height="21"></a> -->
+  <img alt="GitHub" src="https://img.shields.io/github/license/davidgasquez/grants-data-portal?style=flat-square">
+  <img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/davidgasquez/grants-data-portal/run.yml?style=flat-square">
+  <a href="https://www.drips.network/app/projects/github/davidgasquez/gitcoin-grants-data-portal" target="_blank"><img src="https://www.drips.network/api/embed/project/https%3A%2F%2Fgithub.com%2Fdavidgasquez%2Fgitcoin-grants-data-portal/support.png?background=light&style=github&text=project&stat=none" alt="Support gitcoin-grants-data-portal on drips.network" height="20"></a>
 </div>
 
-
-Open source, serverless, and local-first Data Platform for Gitcoin Grants Data. This data hub improves data access and empower data scientists to conduct research that guides community driven analysis.
+Open source, serverless, and local-first Data Platform for Grants Data. This data hub improves data access and empower data scientists to conduct research that guides community driven analysis.
 
 > [!WARNING]
 >

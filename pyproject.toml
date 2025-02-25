@@ -6,10 +6,10 @@ readme = "README.md"
 authors = [{ name = "David Gasquez", email = "davidgasquez@gmail.com" }]
 requires-python = ">=3.13.1"
 dependencies = [
-    "dagster>=1.9.11",
-    "dagster-duckdb>=0.25.11",
-    "dagster-gcp>=0.25.11",
-    "google-cloud-bigquery-storage>=2.27.0",
+    "dagster>=1.10.2",
+    "dagster-duckdb>=0.26.2",
+    "dagster-gcp>=0.26.2",
+    "google-cloud-bigquery-storage>=2.28.0",
 ]
 
 [build-system]
@@ -20,7 +20,9 @@ build-backend = "hatchling.build"
 packages = ["dag"]
 
 [dependency-groups]
-dev = ["dagster-webserver>=1.9.11"]
+dev = [
+    "dagster-webserver>=1.10.2",
+]
 
 [tool.dagster]
 module_name = "dag.definitions"

@@ -23,4 +23,4 @@ jobs:
         with:
           enable-cache: true
       - name: Install dependencies
-        run: uv sync --no-dev
+        run: uv sync --no-dev --frozen

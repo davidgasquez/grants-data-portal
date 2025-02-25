@@ -10,6 +10,30 @@ def hello(context: dg.AssetExecutionContext):
     context.log.info("Hello!")
 
 
+@dg.asset
+def collections(
+    context: dg.AssetExecutionContext,
+    bigquery: BigQueryResource,
+    duckdb: DuckDBResource,
+):
+    with bigquery.get_client() as bq_client, duckdb.get_connection() as duckdb_client:
+        query = """
+            select * from `opensource-observer.oso.collections_v1`
+        """
+        job = bq_client.query(query)
+        result: pa.Table = job.to_arrow(create_bqstorage_client=True)
+
+        context.log.info(result.column_names)
+
+        duckdb_client.execute(
+            """
+            create or replace table collections as (
+                select * from result
+            )
+        """
+        )
+
+
 @dg.asset(deps=[hello])
 def world(
     context: dg.AssetExecutionContext,
@@ -34,11 +58,8 @@ def world(
         context.log.info("World!")
 
 
-defs = dg.Definitions(assets=[hello, world])
-
-
 defs = Definitions(
-    assets=[hello, world],
+    assets=[hello, world, collections],
     resources={
         "bigquery": BigQueryResource(
             project=dg.EnvVar("BIGQUERY_PROJECT"),
