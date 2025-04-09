@@ -1,67 +1,98 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+            name="description"
+            content="A minimal portal to explore grants data and key ideas."
+        />
+        <link
+            rel="icon"
+            href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>࿂</text></svg>"
+        />
+        <title>Grants Data Portal</title>
+        <style>
+            body {
+                font-family: "JetBrains Mono", monospace;
+                background-color: #fff;
+                color: #333;
+                margin: 0;
+                padding: 20px;
+            }
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="A minimal portal to explore grants data and key ideas.">
-    <title>Grants Data Portal</title>
-    <style>
-        body {
-            font-family: 'JetBrains Mono', monospace;
-            background-color: #fff;
-            color: #333;
-            margin: 0;
-            padding: 20px;
-        }
+            header,
+            main,
+            footer {
+                max-width: 800px;
+                margin: 0 auto;
+            }
 
-        header,
-        main,
-        footer {
-            max-width: 800px;
-            margin: 0 auto;
-        }
+            h1,
+            h2 {
+                border-bottom: 1px solid #ddd;
+                padding-bottom: 10px;
+            }
 
-        h1,
-        h2 {
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 10px;
-        }
+            a {
+                color: #555;
+                text-decoration: none;
+                border-bottom: 1px solid currentColor;
+            }
 
-        a {
-            color: #555;
-            text-decoration: none;
-            border-bottom: 1px solid currentColor;
-        }
+            a:hover {
+                color: #fff;
+                background-color: #555;
+            }
 
-        a:hover {
-            color: #fff;
-            background-color: #555;
-        }
-    </style>
-</head>
+            .logo {
+                font-size: 5em;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+        </style>
+    </head>
 
-<body>
-    <header>
-        <h1>Grants Data Portal</h1>
-        <p>Open source, serverless, and local-first Data Platform for Grants Data. Access the data you need to conduct
-            research and drive the community forward!</p>
-    </header>
+    <body>
+        <header>
+            <!-- Logo -->
+            <div class="logo">࿂</div>
 
-    <main>
-        <section>
-            <h2>Overview</h2>
-            <p>This portal gathers and processes grant data to offer key insights and enable data-driven decision
-                making.</p>
-            <p>It harnesses modern data pipelines and storage techniques to ensure transparent and reproducible results.
+            <h1>Grants Data Portal</h1>
+            <p>
+                Open source, serverless, and local-first Data Platform for
+                Grants Data. Access the data you need to conduct research and
+                drive the community forward!
             </p>
-        </section>
-    </main>
+        </header>
 
-    <footer>
-        <p>Follow on <a href="https://github.com/davidgasquez/grants-data-portal" target="_blank">GitHub</a> and <a
-                href="https://twitter.com/davidgasquez" target="_blank">Twitter</a>.</p>
-    </footer>
-</body>
+        <main>
+            <section>
+                <h2>Overview</h2>
+                <p>
+                    This portal gathers and processes grant data to offer key
+                    insights and enable data-driven decision making.
+                </p>
+                <p>
+                    It harnesses modern data pipelines and storage techniques to
+                    ensure transparent and reproducible results.
+                </p>
+            </section>
+        </main>
 
+        <footer>
+            <p>
+                Follow on
+                <a
+                    href="https://github.com/davidgasquez/grants-data-portal"
+                    target="_blank"
+                    >GitHub</a
+                >
+                and
+                <a href="https://twitter.com/davidgasquez" target="_blank"
+                    >Twitter</a
+                >.
+            </p>
+        </footer>
+    </body>
 </html>
