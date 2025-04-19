@@ -1,7 +1,4 @@
-<div align="center" style="font-size: 6em;">
-  ࿂
-</div>
-<h1 align="center">Grants Data Portal</h1>
+<h1 align="center">࿂ Grants Data Portal ࿂</h1>
 
 <div align="center">
   <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/davidgasquez/grants-data-portal?style=flat-square">
