@@ -14,7 +14,7 @@ Open source, serverless, and local-first Data Platform for Public Goods Grants D
 
 > [!IMPORTANT]
 >
-> The previous version of the portal is **deprecated**. You can find better and more up to date data on [Open Source Observer](https://www.opensource.observer/). This new approach/version **focuses on curating Open Source Observer datasets with some smaller datasets** and distributing them.
+> The previous version of the portal (browse it [here](https://github.com/davidgasquez/grants-data-portal/tree/ea74827476e25fbc3f94aa052c15c7b681a2d183)) is **deprecated**. You can find better and more up to date data on [Open Source Observer](https://www.opensource.observer/). This new approach/version **focuses on curating Open Source Observer datasets with some smaller datasets** and distributing them.
 
 ## 📖 Overview
 
