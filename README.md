@@ -1,5 +1,5 @@
-<div align="center">
-  <img src="https://user-images.githubusercontent.com/1682202/271937380-10d6e036-5fe4-4ea6-b3b4-8e3001c21289.png" width="100" />
+<div align="center" style="font-size: 6em;">
+  ࿂
 </div>
 <h1 align="center">Grants Data Portal</h1>
 
@@ -14,7 +14,7 @@ Open source, serverless, and local-first Data Platform for Public Goods Grants D
 
 > [!IMPORTANT]
 >
-> The previous version of the portal is now **deprecated**. You can find better and more up to date data on [Open Source Observer](https://www.opensource.observer/). This new approach/version, **focusing on curating Open Source Observer datasets with some smaller datasets**, is under development.
+> The previous version of the portal is **deprecated**. You can find better and more up to date data on [Open Source Observer](https://www.opensource.observer/). This new approach/version **focuses on curating Open Source Observer datasets with some smaller datasets** and distributing them.
 
 ## 📖 Overview
 

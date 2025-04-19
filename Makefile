@@ -10,7 +10,11 @@ setup: .uv
 
 .PHONY: dev
 dev:
-	uv run dagster dev
+	uv run dg dev
+
+.PHONY: run
+run:
+	dg launch --assets '*'
 
 .PHONY: web
 web:
