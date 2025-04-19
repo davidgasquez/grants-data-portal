@@ -1,64 +1,24 @@
 [project]
-name = "ggdp"
-version = "1.0.0"
-authors = [{ name = "David Gasquez" }]
-dependencies = [
-    "aiohttp",
-    "dagster-dbt",
-    "dagster-duckdb-pandas",
-    "dagster-duckdb",
-    "dagster==1.7.12",
-    "dbt-core",
-    "dbt-duckdb",
-    "duckdb==1.0.0",
-    "fsspec",
-    "ipykernel",
-    "ipywidgets",
-    "itables",
-    "matplotlib",
-    "nbclient",
-    "nbformat",
-    "numpy",
-    "pandas",
-    "pyarrow",
-    "regex",
-    "tenacity",
-    "tqdm",
-]
+name = "gdp"
+requires-python = ">=3.9,<3.13"
+version = "0.0.0"
+dependencies = ["dagster"]
 
-requires-python = ">=3.10, <3.12"
-readme = "README.md"
-license = { text = "MIT" }
+[project.entry-points]
+"dagster_dg.plugin" = { gdp = "gdp.lib" }
 
-[project.urls]
-Homepage = "https://davidgasquez.github.io/gitcoin-grants-data-portal/"
-Changelog = "https://github.com/davidgasquez/gitcoin-grants-data-portal/commits/main/"
-Issues = "https://github.com/davidgasquez/gitcoin-grants-data-portal/issues"
-CI = "https://github.com/davidgasquez/gitcoin-grants-data-portal/actions"
-
-[project.optional-dependencies]
-dev = ["dagster-webserver", "harlequin", "ruff"]
+[dependency-groups]
+dev = ["dagster-webserver"]
 
 [build-system]
-requires = ["setuptools"]
-build-backend = "setuptools.build_meta"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
-[tool.setuptools]
-packages = ["ggdp"]
+[tool.dg]
+directory_type = "project"
 
-[tool.setuptools.package-data]
-"ggdp" = ["../dbt/**"]
+[tool.dg.project]
+root_module = "gdp"
 
-[tool.dagster]
-module_name = "ggdp"
-
-[tool.sqlfmt]
-line_length = 120
-check = true
-fast = false
-dialect = "duckdb"
-
-[tool.ruff.lint.isort]
-case-sensitive = true
-combine-as-imports = true
-length-sort = true
+[tool.dg.project.python_environment]
+active = true
