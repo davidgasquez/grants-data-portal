@@ -10,6 +10,7 @@
   <a href="https://www.drips.network/app/projects/github/davidgasquez/gitcoin-grants-data-portal" target="_blank"><img src="https://www.drips.network/api/embed/project/https%3A%2F%2Fgithub.com%2Fdavidgasquez%2Fgitcoin-grants-data-portal/support.png?background=light&style=github&text=project&stat=none" alt="Support gitcoin-grants-data-portal on drips.network" height="20"></a>
 </div>
 
+
 Open source, serverless, and local-first Data Platform for Public Goods Grants Data. This data hub improves data access and empower data scientists to conduct research that guides community driven analysis.
 
 > [!IMPORTANT]
