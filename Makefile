@@ -10,11 +10,11 @@ setup: .uv
 
 .PHONY: dev
 dev:
-	dg dev
+	uv run dg dev
 
 .PHONY: run
 run:
-	dg launch --assets '*'
+	uv run dg launch --assets '*'
 
 .PHONY: web
 web:
