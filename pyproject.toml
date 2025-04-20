@@ -2,7 +2,10 @@
 name = "gdp"
 requires-python = ">=3.9,<3.13"
 version = "0.0.0"
-dependencies = ["dagster"]
+dependencies = [
+    "dagster",
+    "dagster-dg>=0.26.11",
+]
 
 [project.entry-points]
 "dagster_dg.plugin" = { gdp = "gdp.lib" }
