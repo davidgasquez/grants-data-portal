@@ -3,7 +3,7 @@ name = "gdp"
 requires-python = ">=3.9,<3.13"
 version = "0.0.0"
 dependencies = [
-    "dagster",
+    "dagster>=1.10.11",
     "dagster-dg>=0.26.11",
 ]
 
@@ -11,7 +11,9 @@ dependencies = [
 "dagster_dg.plugin" = { gdp = "gdp.lib" }
 
 [dependency-groups]
-dev = ["dagster-webserver"]
+dev = [
+    "dagster-webserver>=1.10.17",
+]
 
 [build-system]
 requires = ["hatchling"]
