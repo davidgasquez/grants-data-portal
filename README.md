@@ -1,59 +1,68 @@
-<h1 align="center">࿂ Grants Data Portal ࿂</h1>
+<p align="center">
+<img src="https://user-images.githubusercontent.com/1682202/271937380-10d6e036-5fe4-4ea6-b3b4-8e3001c21289.png" data-canonical-src="https://user-images.githubusercontent.com/1682202/271937380-10d6e036-5fe4-4ea6-b3b4-8e3001c21289.png" width="100" />
+</p>
 
-<div align="center">
-  <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/davidgasquez/grants-data-portal?style=flat-square">
-  <img alt="GitHub" src="https://img.shields.io/github/license/davidgasquez/grants-data-portal?style=flat-square">
-  <img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/davidgasquez/grants-data-portal/run.yml?style=flat-square">
-  <a href="https://www.drips.network/app/projects/github/davidgasquez/gitcoin-grants-data-portal" target="_blank"><img src="https://www.drips.network/api/embed/project/https%3A%2F%2Fgithub.com%2Fdavidgasquez%2Fgitcoin-grants-data-portal/support.png?background=light&style=github&text=project&stat=none" alt="Support gitcoin-grants-data-portal on drips.network" height="20"></a>
-</div>
+# 🌲 Gitcoin Grants Data Portal
 
-
-Open source, serverless, and local-first Data Platform for Public Goods Grants Data. This data hub improves data access and empower data scientists to conduct research that guides community driven analysis.
+Open source, serverless, and local-first Data Platform for Gitcoin Grants Data. This data hub improves data access and empower data scientists to conduct research that guides community driven analysis.
 
 > [!IMPORTANT]
 >
-> The previous version of the portal (browse it [here](https://github.com/davidgasquez/grants-data-portal/tree/ea74827476e25fbc3f94aa052c15c7b681a2d183)) is **deprecated**. You can find better and more up to date data on [Open Source Observer](https://www.opensource.observer/). This new approach/version **focuses on curating Open Source Observer datasets with some smaller datasets** and distributing them.
+> This project is now **deprecated** and **archived**. It is no longer maintained.
+> The underlying Grants Stack infrastructure was sunset by Gitcoin. `grants-stack-indexer-v2` is no longer running.
+> Gitcoin confirmed that Grants Stack and Grants Lab were shut down, and indexer-backed apps are no longer accessible ([governance post](https://gov.gitcoin.co/t/focusing-gitcoins-future-sunsetting-grants-stack-eol-may-2025/20333/7)).
+> You can find better and more up to date datasets on [Open Source Observer](https://www.opensource.observer/).
+
+![DAG](https://github.com/davidgasquez/gitcoin-grants-data-portal/assets/1682202/2095974c-f8c4-430b-9c93-dd2a0598127e)
+
+## 📂 Gitcoin Grants Data
+
+Datasets are living as Parquet files on IPFS! You can get them all at the [IPFS CID](https://raw.githubusercontent.com/davidgasquez/gitcoin-grants-data-portal/main/data/IPFS_CID) pointer available in this repository, surfaced also in the [Data Portal Data section](https://grantsdataportal.xyz/data/).
+
+The following command will give you a working URL to explore the available tables.
+
+```bash
+# Get the latest IPFS CID
+LATEST_IPFS_CID=$(curl https://raw.githubusercontent.com/davidgasquez/gitcoin-grants-data-portal/main/data/IPFS_CID)
+
+# Print the Gateway URL with all the tables
+echo https://ipfs.filebase.io/ipfs/$LATEST_IPFS_CID/data/
+```
+
+### 📌 IPNS
+
+You can also go to [`ipns://k51qzi5uqu5dhn3p5xdkp8n6azd4l1mma5zujinkeewhvuh5oq4qvt7etk9tvc`](https://k51qzi5uqu5dhn3p5xdkp8n6azd4l1mma5zujinkeewhvuh5oq4qvt7etk9tvc.ipns.cf-ipfs.com/data/), which points to the latest available data via IPNS.
+
+You can now read the files from your favorite tools. E.g: `pd.read_parquet('https://grantsdataportal.xyz/data/allo_rounds.parquet')`
 
 ## 📖 Overview
 
-The repository contains code and artifacts to help process grants around the Public Goods Ecosystem. The portal is based on the principles of [Datadex](https://datadex.datonic.io/).
+The repository contains code and artifacts to help process Gitcoin Grants data from the [Grants Stack Indexer API](https://github.com/gitcoinco/grants-stack-indexer). It is an instance of [Datadex](https://github.com/davidgasquez/datadex) allowing you and everyone else to:
 
-### 📦 Key Features
+- Add new data sources to the portal, collaborate on better models (ala Dune) or submit an interesting analysis.
+- All in a permissionless way. Don't ask, fork it and improve the models, add a new source or update any script.
+- Declarative stateless transformations tracked in git, executed in GitHub Actions and published to IPFS. Data, artifacts (like the entire DuckDB database), and models all version controlled.
+- Share and explore dashboards and report with the world!
 
-- **Open**: Code and data are open source and relies on open standards and formats.
-- **Permissionless Collaboration**: Collaborate on data, models, and pipelines. Fork the repo and run the platform locally in minutes. No constraints or platform lock-ins.
-- **Decentralization Options**: Runs on a laptop, server, CI runner, or even on decentralized compute networks like Bacalhau. No local setup required.
-- **Data as Code**: Each commit generates and pushes all datasets as files to an Object Storage.
-- **Modular Flexibility**: Replace, extend, or remove individual components. Compatible with tons of tools. At the end of the day, datasets are Parquet files.
-- **Low Friction Data Usage**: Raw and processed data is available to anyone openly. Use whatever tool you want!
-- **Modern Data Engineering**: Supports data engineering essentials such as typing, testing, materialized views, and development branches. Utilizes best practices, including declarative transformations, and utilizes state-of-the-art tools like DuckDB.
+> [!TIP]
+> You can read more on the [motivation and the approach on my blog](https://davidgasquez.github.io/gitcoin-data/)!
 
 ## ⚙️ Quick Start
 
-Make sure you have [uv](https://docs.astral.sh/uv/getting-started/installation/) installed. Clone the repository and install dependencies:
+The fastest way to start working on the Data Portal is via [VSCode Remote Containers](https://code.visualstudio.com/docs/remote/containers). Once inside the develpment environment, you can run `make dev` to spin up the Dagster UI.
 
-```bash
-git clone https://github.com/davidgasquez/grants-data-portal.git
-cd grants-data-portal
-make setup
-```
+The development environment can also run in your browser thanks to GitHub Codespaces! Just click on the badge below to get started.
 
-Run the Dagster UI:
+[![badge](https://github.com/codespaces/badge.svg)](https://codespaces.new/davidgasquez/gitcoin-grants-data-portal)
 
-```bash
-make dev
-```
+### 🛠️ Contributing
 
-You can now access the Dagster UI at [http://localhost:3000](http://localhost:3000)!
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change. There are multiple interesting ways to contribute to this project:
 
-## 🛠️ Contributing
-
-This project is in active development. You can help by giving ideas, answering questions, reporting bugs, proposing enhancements, improving the documentation, and fixing bugs.
-Some ways you can contribute to this project:
-
-- Adding new data sources.
-- Improving the data quality of existing datasets.
-- Adding tests to the data pipelines.
+- Propose a new [dataset](https://github.com/davidgasquez/gitcoin-grants-data-portal/issues/new)
+- Add [new data sources](ggdp/assets/allo.py)
+- Improve [dbt project](dbt/) models
+- Write a one off [report](reports/)
 
 ### 📄 License
 
