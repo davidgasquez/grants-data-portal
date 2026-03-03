@@ -1,94 +1,195 @@
 <!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+            name="description"
+            content="Historical snapshot of Gitcoin Grants Stack era data."
+        />
+        <link rel="icon" href="favicon.svg" />
+        <title>Grants Data Portal</title>
+        <style>
+            :root {
+                --bg: #020202;
+                --fg: #f2f2f2;
+                --muted: #d5d5d5;
+                --border: #f2f2f2;
+                --button-bg: transparent;
+                --button-fg: #f2f2f2;
+                --button-hover-bg: #f2f2f2;
+                --button-hover-fg: #020202;
+                color-scheme: dark;
+                font-family:
+                    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                    "Liberation Mono", "Courier New", monospace;
+            }
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="A minimal portal to explore grants data and key ideas." />
-    <link rel="icon" href="favicon.svg" />
-    <title>Grants Data Portal</title>
-    <style>
-        body {
-            font-family: "JetBrains Mono", monospace;
-            background-color: #fff;
-            color: #333;
-            margin: 0;
-            padding: 20px;
-        }
+            * {
+                box-sizing: border-box;
+            }
 
-        header,
-        main,
-        footer {
-            max-width: 800px;
-            margin: 0 auto;
-        }
+            html,
+            body {
+                margin: 0;
+                min-height: 100%;
+            }
 
-        h1,
-        h2 {
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 10px;
-        }
+            body {
+                background: var(--bg);
+                color: var(--fg);
+            }
 
-        a {
-            color: #555;
-            text-decoration: none;
-            border-bottom: 1px solid currentColor;
-        }
+            a {
+                color: inherit;
+                text-underline-offset: 0.22em;
+            }
 
-        a:hover {
-            color: #fff;
-            background-color: #555;
-        }
+            .skip-link {
+                position: absolute;
+                left: 1rem;
+                top: -999px;
+                z-index: 1000;
+                padding: 0.5rem 0.75rem;
+                background: var(--fg);
+                color: var(--bg);
+                text-decoration: none;
+            }
 
-        .logo {
-            text-align: center;
-        }
+            .skip-link:focus {
+                top: 1rem;
+            }
 
-        footer {
-            margin-top: 20px;
-            font-size: 0.8em;
-            border-top: 1px solid #ddd;
-            padding-top: 20px;
-        }
-    </style>
-</head>
+            .layout {
+                width: min(92vw, 42rem);
+                margin: 0 auto;
+                min-height: 100dvh;
+                display: grid;
+                align-content: center;
+                gap: 2.2rem;
+                padding: 2rem 0;
+            }
 
-<body>
-    <header>
-        <div class="logo">
-            <img src="favicon.svg" alt="࿂" width="180" height="180" />
-        </div>
+            .hero {
+                display: grid;
+                justify-items: center;
+                gap: 1.5rem;
+            }
 
-        <h1>Grants Data Portal</h1>
-        <p>
-            Open source, serverless, and local-first Data Platform for
-            Grants Data. Access the data you need to conduct research and
-            drive the community forward!
-        </p>
-    </header>
+            .logo {
+                width: 4.2rem;
+                height: 4.2rem;
+                display: block;
+                filter: invert(1);
+            }
 
-    <main>
-        <section>
-            <h2>Overview</h2>
-            <p>
-                This portal gathers and processes grant data to offer key
-                insights and enable data-driven decision making.
-            </p>
-            <p>
-                It harnesses modern data pipelines and storage techniques to
-                ensure transparent and reproducible results.
-            </p>
-        </section>
-    </main>
+            h1 {
+                margin: 0;
+                font-size: clamp(1.55rem, 3.8vw, 2.25rem);
+                letter-spacing: 0.05em;
+                font-weight: 700;
+                text-align: center;
+            }
 
-    <footer>
-        <p>
-            Follow on
-            <a href="https://github.com/davidgasquez/grants-data-portal" target="_blank">GitHub</a>
-            and
-            <a href="https://twitter.com/davidgasquez" target="_blank">Twitter</a>.
-        </p>
-    </footer>
-</body>
+            .content {
+                display: grid;
+                gap: 1.2rem;
+            }
 
+            p {
+                margin: 0;
+                color: var(--muted);
+                font-size: clamp(0.9rem, 1.7vw, 1.05rem);
+                line-height: 1.85;
+                text-wrap: pretty;
+            }
+
+            .actions {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 0.8rem;
+                margin-top: 0.2rem;
+            }
+
+            .button-link {
+                display: inline-block;
+                padding: 0.72rem 1.05rem;
+                border: 1px solid var(--border);
+                text-decoration: none;
+                text-transform: uppercase;
+                letter-spacing: 0.07em;
+                font-size: 0.82rem;
+                background: var(--button-bg);
+                color: var(--button-fg);
+                transition: background 140ms ease, color 140ms ease;
+            }
+
+            .button-link:hover,
+            .button-link:focus-visible {
+                background: var(--button-hover-bg);
+                color: var(--button-hover-fg);
+            }
+
+            .inline-link {
+                font-style: italic;
+            }
+        </style>
+    </head>
+
+    <body>
+        <a class="skip-link" href="#main-content">Skip to content</a>
+
+        <main id="main-content" class="layout">
+            <header class="hero">
+                <img class="logo" src="favicon.svg" alt="" aria-hidden="true" />
+                <h1>Grants Data Portal</h1>
+            </header>
+
+            <section class="content">
+                <p>
+                    <strong>Historical snapshot</strong> of Gitcoin Grants
+                    Stack era data, preserved for reproducibility and research.
+                </p>
+                <p>
+                    Gitcoin sunset Grants Labs and Grants Stack on
+                    <strong>May 31, 2025</strong>. Hosted apps are no longer
+                    maintained. For <em>current and broader</em> Gitcoin data,
+                    use <strong>Open Source Observer</strong>. See the
+                    <a
+                        class="inline-link"
+                        href="https://gov.gitcoin.co/t/focusing-gitcoins-future-sunsetting-grants-stack-eol-may-2025/20333/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >governance post</a
+                    >
+                    and
+                    <a
+                        class="inline-link"
+                        href="https://docs.opensource.observer/docs/integrate/datasets/#gitcoin"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >OSO datasets docs</a
+                    >.
+                </p>
+            </section>
+
+            <nav class="actions" aria-label="Primary links">
+                <a
+                    class="button-link"
+                    href="https://github.com/davidgasquez/grants-data-portal"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >GitHub</a
+                >
+                <a
+                    class="button-link"
+                    href="https://www.opensource.observer/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Open Source Observer</a
+                >
+            </nav>
+        </main>
+    </body>
 </html>

@@ -6,7 +6,9 @@ on:
     branches:
       - main
     paths:
-      - 'web/**'
+      - "web/**"
+      - "wrangler.toml"
+      - ".github/workflows/web.yml"
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -16,6 +18,8 @@ jobs:
   website:
     name: Website
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
     steps:
       - name: Checkout
@@ -26,5 +30,4 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: fbe814d4a37d3d3d7fcfeec0ab929ff6
-          command: pages deploy web --project-name=grantsdataportal --branch=main
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          command: deploy

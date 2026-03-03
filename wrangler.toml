@@ -1,0 +1,9 @@
+name = "grantsdataportal"
+compatibility_date = "2026-03-03"
+workers_dev = true
+
+assets = { directory = "./web" }
+
+routes = [
+  { pattern = "grantsdataportal.xyz/*", zone_name = "grantsdataportal.xyz" }
+]
