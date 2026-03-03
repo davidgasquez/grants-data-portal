@@ -134,6 +134,41 @@
             .inline-link {
                 font-style: italic;
             }
+
+            .data-section {
+                padding: 1rem 0;
+                display: grid;
+                gap: 0.8rem;
+            }
+
+            .data-section h2 {
+                margin: 0;
+                font-size: 1rem;
+                letter-spacing: 0.06em;
+                text-transform: uppercase;
+            }
+
+            .dataset-list {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                display: grid;
+                gap: 0.45rem;
+            }
+
+            .dataset-item {
+                display: grid;
+                grid-template-columns: 1fr auto auto auto;
+                gap: 0.7rem;
+                align-items: center;
+                border: 1px solid color-mix(in srgb, var(--border) 45%, transparent);
+                padding: 0.45rem 0.6rem;
+            }
+
+            .dataset-name {
+                color: var(--muted);
+                overflow-wrap: anywhere;
+            }
         </style>
     </head>
 
@@ -174,6 +209,92 @@
                 </p>
             </section>
 
+            <section class="data-section" aria-labelledby="data-heading">
+                <h2 id="data-heading">Data</h2>
+                <ul class="dataset-list" aria-label="Datasets in CSV and Parquet formats">
+                    <li class="dataset-item">
+                        <span class="dataset-name">applications</span>
+                        <a href="https://data.grantsdataportal.xyz/applications.csv">CSV</a>
+                        <a href="https://data.grantsdataportal.xyz/applications.parquet">Parquet</a>
+                    </li>
+                    <li class="dataset-item">
+                        <span class="dataset-name">applications_payouts</span>
+                        <a href="https://data.grantsdataportal.xyz/applications_payouts.csv">CSV</a>
+                        <a href="https://data.grantsdataportal.xyz/applications_payouts.parquet">Parquet</a>
+                    </li>
+                    <li class="dataset-item">
+                        <span class="dataset-name">attestations</span>
+                        <a href="https://data.grantsdataportal.xyz/attestations.csv">CSV</a>
+                        <a href="https://data.grantsdataportal.xyz/attestations.parquet">Parquet</a>
+                    </li>
+                    <li class="dataset-item">
+                        <span class="dataset-name">attestation_txns</span>
+                        <a href="https://data.grantsdataportal.xyz/attestation_txns.csv">CSV</a>
+                        <a href="https://data.grantsdataportal.xyz/attestation_txns.parquet">Parquet</a>
+                    </li>
+                    <li class="dataset-item">
+                        <span class="dataset-name">donations</span>
+                        <a href="https://data.grantsdataportal.xyz/donations.csv">CSV</a>
+                        <a href="https://data.grantsdataportal.xyz/donations.parquet">Parquet</a>
+                    </li>
+                    <li class="dataset-item">
+                        <span class="dataset-name">events_registry</span>
+                        <a href="https://data.grantsdataportal.xyz/events_registry.csv">CSV</a>
+                        <a href="https://data.grantsdataportal.xyz/events_registry.parquet">Parquet</a>
+                    </li>
+                    <li class="dataset-item">
+                        <span class="dataset-name">legacy_projects</span>
+                        <a href="https://data.grantsdataportal.xyz/legacy_projects.csv">CSV</a>
+                        <a href="https://data.grantsdataportal.xyz/legacy_projects.parquet">Parquet</a>
+                    </li>
+                    <li class="dataset-item">
+                        <span class="dataset-name">metadata_cache</span>
+                        <a href="https://data.grantsdataportal.xyz/metadata_cache.csv">CSV</a>
+                        <a href="https://data.grantsdataportal.xyz/metadata_cache.parquet">Parquet</a>
+                    </li>
+                    <li class="dataset-item">
+                        <span class="dataset-name">pending_round_roles</span>
+                        <a href="https://data.grantsdataportal.xyz/pending_round_roles.csv">CSV</a>
+                        <a href="https://data.grantsdataportal.xyz/pending_round_roles.parquet">Parquet</a>
+                    </li>
+                    <li class="dataset-item">
+                        <span class="dataset-name">price_cache</span>
+                        <a href="https://data.grantsdataportal.xyz/price_cache.csv">CSV</a>
+                        <a href="https://data.grantsdataportal.xyz/price_cache.parquet">Parquet</a>
+                    </li>
+                    <li class="dataset-item">
+                        <span class="dataset-name">project_roles</span>
+                        <a href="https://data.grantsdataportal.xyz/project_roles.csv">CSV</a>
+                        <a href="https://data.grantsdataportal.xyz/project_roles.parquet">Parquet</a>
+                    </li>
+                    <li class="dataset-item">
+                        <span class="dataset-name">projects</span>
+                        <a href="https://data.grantsdataportal.xyz/projects.csv">CSV</a>
+                        <a href="https://data.grantsdataportal.xyz/projects.parquet">Parquet</a>
+                    </li>
+                    <li class="dataset-item">
+                        <span class="dataset-name">round_roles</span>
+                        <a href="https://data.grantsdataportal.xyz/round_roles.csv">CSV</a>
+                        <a href="https://data.grantsdataportal.xyz/round_roles.parquet">Parquet</a>
+                    </li>
+                    <li class="dataset-item">
+                        <span class="dataset-name">rounds</span>
+                        <a href="https://data.grantsdataportal.xyz/rounds.csv">CSV</a>
+                        <a href="https://data.grantsdataportal.xyz/rounds.parquet">Parquet</a>
+                    </li>
+                    <li class="dataset-item">
+                        <span class="dataset-name">strategies_registry</span>
+                        <a href="https://data.grantsdataportal.xyz/strategies_registry.csv">CSV</a>
+                        <a href="https://data.grantsdataportal.xyz/strategies_registry.parquet">Parquet</a>
+                    </li>
+                    <li class="dataset-item">
+                        <span class="dataset-name">strategy_timings</span>
+                        <a href="https://data.grantsdataportal.xyz/strategy_timings.csv">CSV</a>
+                        <a href="https://data.grantsdataportal.xyz/strategy_timings.parquet">Parquet</a>
+                    </li>
+                </ul>
+            </section>
+
             <nav class="actions" aria-label="Primary links">
                 <a
                     class="button-link"
@@ -191,5 +312,28 @@
                 >
             </nav>
         </main>
+
+        <script>
+            document.querySelectorAll(".dataset-item").forEach((item) => {
+                const parquetLink = item.querySelector(
+                    "a[href^='https://data.grantsdataportal.xyz/'][href$='.parquet']"
+                )
+                if (!parquetLink) return
+
+                const encodedParquetUrl = encodeURIComponent(parquetLink.href)
+                const sqlWorkbenchUrl =
+                    "https://sql-workbench.com/#queries=v0,select-*-from-'" +
+                    encodedParquetUrl +
+                    "'-limit-10~"
+
+                const sqlLink = document.createElement("a")
+                sqlLink.href = sqlWorkbenchUrl
+                sqlLink.textContent = "SQL"
+                sqlLink.target = "_blank"
+                sqlLink.rel = "noopener noreferrer"
+
+                item.append(sqlLink)
+            })
+        </script>
     </body>
 </html>
