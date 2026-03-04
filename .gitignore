@@ -1,5 +1,10 @@
 # Cloudflare local state
 .wrangler/
 
+# Upload runtime artifacts
+.logs/
+.upload-state/
+tmp_api_test/
+
 # OS files
 .DS_Store
